@@ -1,0 +1,7 @@
+.errorElement {
+  width: 100%;
+  padding: 24px;
+  background-color: rgb(236, 47, 47);
+  color: white;
+  font-size: 2em;
+}
