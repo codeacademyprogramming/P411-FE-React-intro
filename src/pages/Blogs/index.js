@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import styles from "./index.module.css";
 
 export function Blogs() {
   const [blogs, setBlogs] = useState([]);

@@ -28,7 +28,11 @@ export class ErrorBoundary extends React.Component {
     this.setState({ error });
   }
 
-  handleChange() {}
+  // integration tests, e2e tests, unit tests
+  // sentry, datadog, ...
+  // snyk
+  // CI (continues integration)/ CD (continues deployment/development) - Circle CI, Github Actions
+
   render() {
     return (
       <>

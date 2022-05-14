@@ -25,6 +25,12 @@ function App() {
           <li>
             <Link to="blogs">Blogs</Link>
           </li>
+          <li>
+            <Link to="stopwatch">Stopwatch</Link>
+          </li>
+          <li>
+            <Link to="memo-example">Memo example</Link>
+          </li>
         </ul>
       </nav>
       <Outlet />
