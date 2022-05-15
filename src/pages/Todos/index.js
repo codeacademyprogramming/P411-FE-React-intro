@@ -1,8 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { TodoItem } from "./TodoItem";
 
 export function Todos() {
+  const navigate = useNavigate();
+
   const [todos, setTodos] = useState([]);
   const [inputValue, setInputValue] = useState("");
+
   const inputRef = useRef(null);
   const someRef = useRef(null);
 
@@ -28,6 +33,12 @@ export function Todos() {
     setInputValue("");
   };
 
+  useEffect(() => {
+    if (todos.length === 5) {
+      navigate("/blogs");
+    }
+  }, [todos, navigate]);
+
   return (
     <div>
       <form onSubmit={onSubmit} ref={someRef}>
@@ -41,8 +52,8 @@ export function Todos() {
         <input type="submit" />
       </form>
       <ul>
-        {todos.map((item) => {
-          return <li>{item.todoName}</li>;
+        {todos.map((item, index) => {
+          return <TodoItem todo={item} key={index} />;
         })}
       </ul>
     </div>

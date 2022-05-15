@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { Footer } from "./components/Footer";
+import { UserContext } from "./context/user";
 
 function App() {
   // const [username, setUsername] = useState("");
+  const { setUser } = useContext(UserContext);
+
   // // runs once
-  // useEffect(() => {
-  //   const username = prompt("please enter your name");
-  //   setUsername(username);
-  // }, []);
+  useEffect(() => {
+    const firstname = prompt("please enter your firstname");
+    const lastname = prompt("please enter your lastname");
+
+    setUser({ firstname, lastname });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // runs whenever pageNumber changes
   // useEffect(() => { }, [pageNumber]);
@@ -34,6 +41,8 @@ function App() {
         </ul>
       </nav>
       <Outlet />
+
+      <Footer />
     </div>
   );
 }

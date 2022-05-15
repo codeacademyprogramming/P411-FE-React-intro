@@ -8,7 +8,7 @@ export function Blogs() {
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typiode.com/posts")
+      .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
         setBlogs(res.data);
       })

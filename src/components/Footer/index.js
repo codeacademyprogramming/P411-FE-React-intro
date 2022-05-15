@@ -1,6 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useUserContext } from "../../context/user";
 
 export const Footer = () => {
+  const { user } = useUserContext();
+
   useEffect(() => {
     const handleScroll = () => {
       console.log("i am handling scroll ");
@@ -12,5 +15,9 @@ export const Footer = () => {
     };
   }, []);
 
-  return <footer>Hello from footer</footer>;
+  return (
+    <footer>
+      Hello from footer. This website is now serving {user.firstname}
+    </footer>
+  );
 };
